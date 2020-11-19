@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <div>
+    <h2>欢迎登录系统：{{ user }}</h2>
+   <table border="1">
+     <tr>
+       <th>书名</th>
+       <th>价格</th>
+     </tr>
+     {% for k,v in books.items() %}
+     <tr>
+       <td>{{ k }}</td>
+       <td>{{ v }}</td>
+     </tr>
+     {% endfor %}
+   </table>
+
+ </div>
+</body>
+</html>
