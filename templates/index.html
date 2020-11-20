@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+    <ul>
+        {% for k, v in user_dict.items() %}
+        <li>{{ v.name }}<a href="/detail?uid={{ k }}">详情</a></li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
