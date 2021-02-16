@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+{% if request.args.password == "1908" %}
+<table border=1>
+  <tr>
+    <td>书名:</td>
+    {% for good in goods.name %}
+    <td>{{good}}</td>
+    {% endfor %}
+  </tr>
+  <tr>
+    <td>价格:</td>
+    {% for prices in goods.price %}
+    <td>{{ prices }}</td>
+    {% endfor %}
+  </tr>
+</table>
+{% endif %}
+</body>
+</html>

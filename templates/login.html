@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <form action="/login" method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+    <label>账号：<input type="text" name="username"></label><br>
+    <!--input type为password类型时，可再前端页面屏蔽页面实际输入增加安全性-->
+    <label>密码：<input type="password" name="password"></label><br>
+    <label><input type="submit" value="登录"></label>
+  </form>
+</body>
+</html>
