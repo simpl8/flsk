@@ -31,6 +31,13 @@ app.config.from_object(DbConfig)
 db = SQLAlchemy(app)
 
 
+# 数据库迁移,项目要通过manage启动
+from flask_migrate import Migrate, MigrateCommand
+migrate = Migrate()
+migrate.init_app(app, db)
+manage.add_command("db", MigrateCommand)
+
+
 # 创建学生类，即学生表
 class Student(db.Model):
     __tablename__ = "db_student"  # 数据库表名
@@ -84,7 +91,7 @@ def student_add():
 # 数据库查询操作
 @app.route("/student_query")
 def query_student():
-    student = Student.query.get(2)
+    student = Student.query.get(2)  # 查询主键为2的数据
     logger.info(student)
     return f"{student}"
     
